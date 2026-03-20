@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Registration System - Add and manage student records">
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Student Registration System</h1>
+        <p class="subtitle">Manage student details easily - add, edit and delete records.</p>
+        <nav class="navbar">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="records.html" class="nav-link">View Records</a>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+
+        <section class="form-section">
+            <h2>Add New Student</h2>
+
+            <div class="input-group">
+                <label for="studentName">Student Name</label>
+                <input type="text" id="studentName" placeholder="Enter student name">
+                <span class="error-msg" id="nameError"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" placeholder="Numbers only">
+                <span class="error-msg" id="idError"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="studentEmail">Email ID</label>
+                <input type="text" id="studentEmail" placeholder="example@email.com">
+                <span class="error-msg" id="emailError"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="contactNo">Contact Number</label>
+                <input type="text" id="contactNo" placeholder="Minimum 10 digits">
+                <span class="error-msg" id="contactError"></span>
+            </div>
+
+            <input type="hidden" id="editIndex" value="-1">
+
+            <button class="add-btn" id="addBtn" onclick="addStudent()">Add Student</button>
+        </section>
+
+        <section class="table-section">
+            <h2>Registered Students</h2>
+
+            <div class="table-container" id="tableContainer">
+                <table id="studentTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- rows added by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="empty-msg" id="noRecords">No students added yet.</p>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Internshala Student Registration System</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
